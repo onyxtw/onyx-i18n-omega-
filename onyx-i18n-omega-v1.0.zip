@@ -1,0 +1,20 @@
+
+This is the official delivery package.
+
+---
+
+## 5. Deployment Steps
+
+### 5.1 Add to ONYX Main Protocol
+
+Place the following into ONYX-GLO-GEM-2026-SYNC:
+
+- `docs/08-i18n-protocol.md` → Section 8  
+- `docs/08-omega-decision-universe.md` → Chapter Ω  
+
+---
+
+### 5.2 Load into O.R.E. (Language Engine)
+
+Mount:
+
