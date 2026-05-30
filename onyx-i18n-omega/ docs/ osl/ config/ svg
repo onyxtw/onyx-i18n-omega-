@@ -1,0 +1,42 @@
+
+---
+
+## 3. Files to Paste
+
+### docs/
+- `08-i18n-protocol.md`  
+  → Paste the full I18N protocol specification.
+
+- `08-omega-decision-universe.md`  
+  → Paste the full Decision Universe (Ω MODEL) specification.
+
+---
+
+### osl/
+- `osl-i18n-omega.oslx`  
+  → Paste the full XML defining ⊙, Σ, ϟ, flows, governance, and DΩ.
+
+---
+
+### config/
+- `i18n-governance.yaml`  
+  → Paste the governance model.
+
+- `i18n-ai-impl.yaml`  
+  → Paste the AI execution model for O.R.E. × Agent Mesh.
+
+---
+
+### svg/
+- `symbol-semantic-topology.svg`  
+  → Paste the topology diagram.
+
+- `cycle-meta-forward.svg`  
+  → Paste the evolution diagram.
+
+---
+
+## 4. Packaging
+
+Compress the entire folder:
+
