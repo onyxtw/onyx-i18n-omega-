@@ -1,0 +1,35 @@
+name: CD-GitOps
+
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
+
+jobs:
+  bump-k8s-image:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Git
+        run: |
+          git config user.name "onyx-bot"
+          git config user.email "bot@onyx.local"
+
+      - name: Update image in deployment
+        run: |
+          IMAGE="ghcr.io/${{ github.repository }}:latest"
+          FILE="k8s/base/deployment.yaml"
+          sed -i "s#ghcr.io/.\\+#${IMAGE}#g" $FILE
+
+      - name: Commit and push
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git add k8s/base/deployment.yaml
+          git commit -m "chore: bump image to latest [ci skip]"
+          git push
